@@ -14,7 +14,7 @@ const concat = require("gulp-concat")
 const js = async (done) => {
   await new Promise((res,rej) => {
 
-    src(scripts.srcJS)
+    src([scripts.srcJS,"node_modules/jquery/dist/jquery.min.js" ,"node_modules/bootstrap/dist/js/bootstrap.min.js"])
       .pipe(plumber(plumberConfig))
       .pipe(
         babel({

@@ -14,7 +14,7 @@ const concat = require('gulp-concat')
 
 const css = async (done) => {
   await new Promise((res, rej) => {
-    src(styles.srcCSS)
+    src([styles.srcCSS, "node_modules/bootstrap/dist/css/bootstrap.min.css"])
       .pipe(plumber(plumberConfig))
       .pipe(sass())
       .pipe(
